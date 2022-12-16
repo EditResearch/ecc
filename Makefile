@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -pedantic -std=c17 -O2 
+CFLAGS=-Wall -Wextra -pedantic -std=c2x -O2 
 LIBS=
 
 INSTALL_PATH=/usr/bin/
@@ -10,7 +10,10 @@ OUTPUT=$(CACHE)/release
 
 
 MODULES += main.o
-
+MODULES += compiler.o
+MODULES += cprocess.o
+MODULES += buffer.o
+MODULES += vector.o
 
 TEST += test.o
 
@@ -36,7 +39,7 @@ exec: all
 
 
 dep:
-	$(CC) -MM app/*.c test/*.c | sed 's|[a-zA-Z0-9_-]*\.o|$(CACHE)/&|' > dep.list
+	$(CC) -MM src/*.c app/*.c test/*.c | sed 's|[a-zA-Z0-9_-]*\.o|$(CACHE)/&|' > dep.list
 
 
 test: env $(T_OBJ)

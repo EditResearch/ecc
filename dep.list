@@ -1,2 +1,6 @@
+.cache/buffer.o: src/buffer.c src/buffer.h
+.cache/compiler.o: src/compiler.c src/compiler.h src/cprocess.h
+.cache/cprocess.o: src/cprocess.c src/cprocess.h
+.cache/vector.o: src/vector.c src/vector.h
 .cache/main.o: app/main.c
 .cache/test.o: test/test.c

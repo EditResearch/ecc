@@ -1,5 +1,12 @@
+/**
+** @file main.c
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "../src/token.h"
 
 int 
 main(void)
